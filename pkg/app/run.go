@@ -96,6 +96,7 @@ func Run(args []string, env config.Environment, file config.File, configFilePath
 	computeDeploy := compute.NewDeployCommand(computeRoot.CmdClause, httpClient, &globals)
 	computeUpdate := compute.NewUpdateCommand(computeRoot.CmdClause, httpClient, &globals)
 	computeValidate := compute.NewValidateCommand(computeRoot.CmdClause, &globals)
+	computeLogs := compute.NewLogsCommand(computeRoot.CmdClause, &globals)
 
 	domainRoot := domain.NewRootCommand(app, &globals)
 	domainCreate := domain.NewCreateCommand(domainRoot.CmdClause, &globals)
@@ -161,6 +162,7 @@ func Run(args []string, env config.Environment, file config.File, configFilePath
 		computeDeploy,
 		computeUpdate,
 		computeValidate,
+		computeLogs,
 
 		domainRoot,
 		domainCreate,

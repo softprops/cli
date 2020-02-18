@@ -24,9 +24,9 @@ require (
 	github.com/mitchellh/mapstructure v1.1.2 // indirect
 	github.com/nicksnyder/go-i18n v1.10.1 // indirect
 	github.com/pierrec/lz4 v2.3.0+incompatible // indirect
+	github.com/r3labs/sse v0.0.0-20200123123541-10c56e11168e
 	github.com/segmentio/textio v1.2.0
 	golang.org/x/crypto v0.0.0-20191029031824-8986dd9e96cf
-	golang.org/x/net v0.0.0-20190926025831-c00fd9afed17 // indirect
 	gopkg.in/alecthomas/kingpin.v3-unstable v3.0.0-20180810215634-df19058c872c
 	gopkg.in/src-d/go-git.v4 v4.13.1
 	gopkg.in/yaml.v2 v2.2.4 // indirect
