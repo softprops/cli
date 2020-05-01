@@ -74,6 +74,8 @@ type API struct {
 	DeletePapertrailFn func(*fastly.DeletePapertrailInput) error
 
 	GetUserFn func(*fastly.GetUserInput) (*fastly.User, error)
+
+	GetRegionsFn func() (*fastly.RegionsResponse, error)
 }
 
 // GetTokenSelf implements Interface.
@@ -349,4 +351,9 @@ func (m API) DeletePapertrail(i *fastly.DeletePapertrailInput) error {
 // GetUser implements Interface.
 func (m API) GetUser(i *fastly.GetUserInput) (*fastly.User, error) {
 	return m.GetUserFn(i)
+}
+
+// GetRegions implements Interface.
+func (m API) GetRegions() (*fastly.RegionsResponse, error) {
+	return m.GetRegionsFn()
 }

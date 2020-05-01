@@ -83,6 +83,8 @@ type Interface interface {
 	DeletePapertrail(*fastly.DeletePapertrailInput) error
 
 	GetUser(*fastly.GetUserInput) (*fastly.User, error)
+
+	GetRegions() (*fastly.RegionsResponse, error)
 }
 
 // Interface assertion, to catch mismatches early.

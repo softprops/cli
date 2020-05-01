@@ -26,6 +26,7 @@ import (
 	"github.com/fastly/cli/pkg/logging/syslog"
 	"github.com/fastly/cli/pkg/service"
 	"github.com/fastly/cli/pkg/serviceversion"
+	"github.com/fastly/cli/pkg/stats"
 	"github.com/fastly/cli/pkg/text"
 	"github.com/fastly/cli/pkg/update"
 	"github.com/fastly/cli/pkg/version"
@@ -158,6 +159,9 @@ func Run(args []string, env config.Environment, file config.File, configFilePath
 	papertrailUpdate := papertrail.NewUpdateCommand(papertrailRoot.CmdClause, &globals)
 	papertrailDelete := papertrail.NewDeleteCommand(papertrailRoot.CmdClause, &globals)
 
+	statsRoot := stats.NewRootCommand(app, &globals)
+	statsRegions := stats.NewRegionsCommand(statsRoot.CmdClause, &globals)
+
 	commands := []common.Command{
 		configureRoot,
 		whoamiRoot,
@@ -243,6 +247,9 @@ func Run(args []string, env config.Environment, file config.File, configFilePath
 		papertrailDescribe,
 		papertrailUpdate,
 		papertrailDelete,
+
+		statsRoot,
+		statsRegions,
 	}
 
 	// Handle parse errors and display contextal usage if possible. Due to bugs
