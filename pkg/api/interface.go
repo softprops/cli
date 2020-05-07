@@ -85,6 +85,7 @@ type Interface interface {
 	GetUser(*fastly.GetUserInput) (*fastly.User, error)
 
 	GetRegions() (*fastly.RegionsResponse, error)
+	GetStatsJSON(*fastly.GetStatsInput, interface{}) error
 }
 
 // Interface assertion, to catch mismatches early.
