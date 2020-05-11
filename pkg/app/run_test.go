@@ -114,7 +114,8 @@ COMMANDS
   backend          Manipulate Fastly service version backends
   healthcheck      Manipulate Fastly service version healthchecks
   logging          Manipulate Fastly service version logging endpoints
-  stats            View service stats (historical and realtime)
+  stats            View statistics (historical and realtime) for a Fastly
+                   service
 `) + "\n\n"
 
 var helpService = strings.TrimSpace(`
@@ -1006,7 +1007,7 @@ COMMANDS
 
 
   stats historical [<flags>]
-    Query historical stats
+    View historical stats for a Fastly service
 
     -s, --service-id=SERVICE-ID  Service ID
     --from=FROM              From time, accepted formats at
@@ -1017,7 +1018,7 @@ COMMANDS
     --format=FORMAT          Output format (json)
 
   stats realtime --service-id=SERVICE-ID [<flags>]
-    Query realtime stats
+    View realtime stats for a Fastly service
 
     -s, --service-id=SERVICE-ID  Service ID
     --format=FORMAT          Output format (json)
